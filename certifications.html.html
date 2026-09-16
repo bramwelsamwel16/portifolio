@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications | Bramwel Samwel</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: #7dd3fc; }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #111827);
+      border-bottom: 1px solid #1f2937;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #dbeafe;
+      font-weight: 600;
+    }
+
+    .page-title {
+      text-align: center;
+      padding: 60px 0 20px;
+      font-size: 2.4rem;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      padding: 30px 0 80px;
+    }
+
+    .cert-card {
+      background: #111827;
+      border: 1px solid #2a3b52;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: #0f172a;
+    }
+
+    .cert-body {
+      padding: 22px;
+    }
+
+    .date {
+      color: #7dd3fc;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .cert-body h3 {
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: #38bdf8;
+      color: #062033;
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">BRAMWEL SAMWEL</div>
+        <div class="nav-links">
+          <a href="index.html">My Projects</a>
+          <a href="certifications.html">Certifications</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Certifications</h1>
+
+    <div class="cert-grid">
+      <article class="cert-card">
+        <img src="images/google-data.jpg" alt="Google Data Analytics Certification" />
+        <div class="cert-body">
+          <span class="date">August 24, 2026</span>
+          <h3>Google Data Analytics</h3>
+          <a href="https://www.credly.com/badges/8ff2a0b5-a399-4321-b6d7-db74e6fbad7c/linked_in_profile" class="btn" target="_blank">
+            Verify
+          </a>
+        </div>
+      </article>
+
+      <article class="cert-card">
+        <img src="images/powerbi.jpg" alt="Microsoft Power BI Certification" />
+        <div class="cert-body">
+          <span class="date">August 26, 2026</span>
+          <h3>Microsoft Power BI</h3>
+          <a href="https://www.credly.com/badges/40e27c86-1fe2-4ec9-9d3b-d158e6229107/linked_in_profile" class="btn" target="_blank">
+            Verify
+          </a>
+        </div>
+      </article>
+
+      <article class="cert-card">
+        <img src="images/powerbi.jpg" alt="Microsoft Power BI Certification Duplicate" />
+        <div class="cert-body">
+          <span class="date">August 26, 2026</span>
+          <h3>Microsoft Power BI</h3>
+          <a href="https://www.credly.com/badges/40e27c86-1fe2-4ec9-9d3b-d158e6229107/linked_in_profile" class="btn" target="_blank">
+            Verify
+          </a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+</body>
+</html>

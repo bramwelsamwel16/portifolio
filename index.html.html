@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Bramwel Mwasenga Data Analyst Portfolio">
+
+    <title>Bramwel Mwasenga | Data Analyst Portfolio</title>
+
+    <style>
+        :root {
+            --primary: #38bdf8;
+            --primary-dark: #0284c7;
+            --dark: #08111f;
+            --dark-card: #101d30;
+            --dark-section: #0c1728;
+            --text: #e5e7eb;
+            --muted: #aab8c8;
+            --border: #263b54;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1180px;
+            margin: auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 17, 31, 0.97);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(rgba(8, 17, 31, .88), rgba(8, 17, 31, .96)),
+                radial-gradient(circle at top right, #164e63, transparent 45%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .small-heading {
+            color: var(--primary);
+            font-size: .82rem;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--primary);
+        }
+
+        .hero-description {
+            color: var(--muted);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 21px;
+            border-radius: 7px;
+            font-weight: bold;
+            border: 2px solid transparent;
+            transition: .3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #032235;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #032235;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-circle {
+            width: 320px;
+            height: 320px;
+            padding: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #9333ea);
+            box-shadow: 0 0 45px rgba(56, 189, 248, .25);
+        }
+
+        .image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid var(--dark);
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-dark {
+            background: var(--dark-section);
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p:last-child {
+            color: var(--muted);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 35px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .about-text .btn {
+            margin-top: 10px;
+        }
+
+        .about-box {
+            background: var(--dark-card);
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .about-box h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            margin: 12px 0;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            text-align: center;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px 18px;
+            transition: .3s ease;
+        }
+
+        .skill-card:hover,
+        .project-card:hover,
+        .contact-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+        }
+
+        .skill-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #032235;
+            font-weight: bold;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: .92rem;
+            margin-top: 8px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            overflow: hidden;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: .3s ease;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 205px;
+            display: block;
+            object-fit: cover;
+            background: #172a40;
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .project-category {
+            color: var(--primary);
+            font-size: .78rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .project-content h3 {
+            margin: 9px 0;
+            font-size: 1.18rem;
+        }
+
+        .project-content p {
+            color: var(--muted);
+            font-size: .93rem;
+            margin-bottom: 16px;
+        }
+
+        .project-link {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            color: white;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .certification-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .certification-card h3 {
+            margin: 10px 0;
+        }
+
+        .certification-card p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .certificate-date {
+            color: var(--primary);
+            font-size: .8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            text-align: center;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 14px;
+            transition: .3s ease;
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .contact-card a,
+        .contact-card p {
+            color: var(--muted);
+            font-size: .9rem;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+
+        .contact-button {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            padding: 28px 0;
+        }
+
+        @media (max-width: 950px) {
+            .hero-content,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 90px 0;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                background: var(--dark);
+                flex-direction: column;
+                text-align: center;
+                border-bottom: 1px solid var(--border);
+            }
+
+            #menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .image-circle {
+                width: 240px;
+                height: 240px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .certifications-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">BRAMWEL MWASENGA<span>.</span></a>
+
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+
+            <div>
+                <p class="small-heading">WELCOME TO MY PORTFOLIO</p>
+
+              <h1>
+                    Bramwel&nbsp;Mwasenga
+                  <span>Data Analyst</span>
+                     </h1>
+                <p class="hero-description">
+                    I transform raw data into meaningful insights using
+                    Excel, SQL, Python and Power BI.
+                </p>
+
+                
+            </div>
+
+            <div class="hero-image">
+                <div class="image-circle">
+                    <img src="images/passport.png" alt="Bramwel Samwel">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="small-heading">GET TO KNOW ME</p>
+                <h2>About Me</h2>
+                <p>
+                    I am a passionate Data Analyst who uses data to support
+                    better business decisions.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I work with data cleaning, analysis, visualization,
+                        reporting and dashboard development.
+                    </p>
+
+                    <p>
+                        My main tools are Microsoft Excel, SQL, Python and
+                        Microsoft Power BI.
+                    </p>
+
+                    <a href="cv.pdf"
+                       class="btn btn-primary"
+                       download="Bramwel-Samwel-CV.pdf">
+                        Download My CV
+                    </a>
+                </div>
+
+                <div class="about-box">
+                    <h3>What I Do</h3>
+                    <ul class="check-list">
+                        <li>Data Cleaning and Preparation</li>
+                        <li>Exploratory Data Analysis</li>
+                        <li>Interactive Dashboard Design</li>
+                        <li>Business Reporting</li>
+                        <li>SQL Database Analysis</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="section section-dark">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="small-heading">MY EXPERTISE</p>
+                <h2>Technical Skills</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">EX</div>
+                    <h3>Microsoft Excel</h3>
+                    <p>Formulas, pivot tables, charts and reporting.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">SQL</div>
+                    <h3>SQL</h3>
+                    <p>Queries, joins, aggregations and data analysis.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">PY</div>
+                    <h3>Python</h3>
+                    <p>Pandas, NumPy, cleaning and data analysis.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="C:\Users\Administrator\Pictures\github page\bi.jpg" alt="bi"></div>
+                    <h3>Power BI</h3>
+                    <p>Dashboards, DAX, data modeling and visualization.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="small-heading">MY WORK</p>
+                <h2>Featured Projects</h2>
+                <p>
+                    A selection of my data analysis and visualization projects.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <img src="images/project1.jpg" alt="HR Attrition Analysis">
+                    <div class="project-content">
+                        <span class="project-category">Python / Power BI</span>
+                        <h3>HR Attrition Analysis</h3>
+                        <p>
+                            Analysis of employee attrition, job satisfaction,
+                            departments and workforce trends.
+                        </p>
+                        <a href="https://github.com/bramwelsamwel16/hr-attrition-analysis"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project2.jpg" alt="Sales Dashboard">
+                    <div class="project-content">
+                        <span class="project-category">Power BI</span>
+                        <h3>Sales Performance Dashboard</h3>
+                        <p>
+                            Dashboard for analyzing sales, revenue and
+                            regional performance.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project3.jpg" alt="Customer Churn Analysis">
+                    <div class="project-content">
+                        <span class="project-category">Python</span>
+                        <h3>Customer Churn Analysis</h3>
+                        <p>
+                            Analysis of customer retention and churn behavior.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project4.jpg" alt="Marketing Campaign Analysis">
+                    <div class="project-content">
+                        <span class="project-category">Excel</span>
+                        <h3>Marketing Campaign Analysis</h3>
+                        <p>
+                            Analysis of marketing campaigns and conversion
+                            performance.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project5.jpg" alt="Financial Performance Report">
+                    <div class="project-content">
+                        <span class="project-category">Excel</span>
+                        <h3>Financial Performance Report</h3>
+                        <p>
+                            Report showing income, expenses and profit trends.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project6.jpg" alt="Inventory Dashboard">
+                    <div class="project-content">
+                        <span class="project-category">Power BI</span>
+                        <h3>Inventory Management Dashboard</h3>
+                        <p>
+                            Dashboard for tracking stock levels and product
+                            movement.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project7.jpg" alt="Business Database Analysis">
+                    <div class="project-content">
+                        <span class="project-category">SQL</span>
+                        <h3>Business Database Analysis</h3>
+                        <p>
+                            SQL analysis of business transactions and
+                            customer records.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project8.jpg" alt="Healthcare Data Analysis">
+                    <div class="project-content">
+                        <span class="project-category">Python</span>
+                        <h3>Healthcare Data Analysis</h3>
+                        <p>
+                            Analysis of healthcare records and service trends.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project9.jpg" alt="Employee HR Analytics">
+                    <div class="project-content">
+                        <span class="project-category">Power BI</span>
+                        <h3>Employee HR Analytics</h3>
+                        <p>
+                            Dashboard for analyzing employee performance and
+                            turnover.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project10.jpg" alt="E-commerce Sales Analysis">
+                    <div class="project-content">
+                        <span class="project-category">SQL</span>
+                        <h3>E-commerce Sales Analysis</h3>
+                        <p>
+                            E-commerce sales analysis using SQL and business
+                            KPIs.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project11.jpg" alt="Education Data Insights">
+                    <div class="project-content">
+                        <span class="project-category">Python</span>
+                        <h3>Education Data Insights</h3>
+                        <p>
+                            Analysis of student performance and education
+                            trends.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project12.jpg" alt="Budget Monitoring Dashboard">
+                    <div class="project-content">
+                        <span class="project-category">Power BI</span>
+                        <h3>Budget Monitoring Dashboard</h3>
+                        <p>
+                            Dashboard for monitoring planned and actual spending.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project13.jpg" alt="Transport Data Analysis">
+                    <div class="project-content">
+                        <span class="project-category">Excel</span>
+                        <h3>Transport Data Analysis</h3>
+                        <p>
+                            Analysis of transport costs, routes and operations.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project14.jpg" alt="Real Estate Market Analysis">
+                    <div class="project-content">
+                        <span class="project-category">SQL</span>
+                        <h3>Real Estate Market Analysis</h3>
+                        <p>
+                            Analysis of property prices, locations and market
+                            activity.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/project15.jpg" alt="Social Media Analytics">
+                    <div class="project-content">
+                        <span class="project-category">Python</span>
+                        <h3>Social Media Analytics</h3>
+                        <p>
+                            Analysis of audience engagement and content
+                            performance.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section section-dark">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="small-heading">MY QUALIFICATIONS</p>
+                <h2>Certifications</h2>
+            </div>
+
+            <div class="certifications-grid">
+
+                <div class="certification-card">
+                    <span class="certificate-date">August 24, 2026</span>
+                    <h3>Google Data Analytics</h3>
+                    <p>
+                        Professional certificate in data analysis and
+                        business intelligence.
+                    </p>
+                    <a href="https://www.credly.com/badges/8ff2a0b5-a399-4321-b6d7-db74e6fbad7c/linked_in_profile"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-primary">
+                        Verify Certificate
+                    </a>
+                </div>
+
+                <div class="certification-card">
+                    <span class="certificate-date">August 26, 2026</span>
+                    <h3>Microsoft Power BI</h3>
+                    <p>
+                        Certification in dashboard design and data
+                        visualization.
+                    </p>
+                    <a href="https://www.credly.com/badges/40e27c86-1fe2-4ec9-9d3b-d158e6229107/linked_in_profile"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-primary">
+                        Verify Certificate
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="small-heading">GET IN TOUCH</p>
+                <h2>Contact Me</h2>
+                <p>
+                    Feel free to contact me for opportunities and collaboration.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <a href="mailto:bramwelsamwel15@gmail.com">
+                        bramwelsamwel15@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <a href="tel:+255755211336">
+                        +255 755 211336
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/bramwel1994"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        LinkedIn Profile
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <p>Mbeya, Tanzania</p>
+                </div>
+
+            </div>
+
+            <div class="contact-button">
+                <a href="mailto:bramwelsamwel15@gmail.com"
+                   class="btn btn-primary">
+                    Send Me an Email
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bramwel Samwel. All Rights Reserved.</p>
+            <p>Data Analyst Portfolio</p>
+        </div>
+    </footer>
+
+</body>
+</html>
