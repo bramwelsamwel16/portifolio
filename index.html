@@ -364,6 +364,23 @@
             margin-bottom: 16px;
         }
 
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .project-skills span {
+            background: rgba(56, 189, 248, .12);
+            color: var(--primary);
+            border: 1px solid rgba(56, 189, 248, .35);
+            font-size: .72rem;
+            font-weight: bold;
+            padding: 4px 9px;
+            border-radius: 20px;
+        }
+
         .project-link {
             color: var(--primary);
             font-weight: bold;
@@ -692,14 +709,106 @@
             <div class="projects-grid">
 
                 <article class="project-card">
+                    <img src="images/fifa.png" alt="FIFA 21 Data Cleaning and EDA">
+                    <div class="project-content">
+                        <span class="project-category">Python / Excel</span>
+                        <h3>FIFA 21 Data Cleaning &amp; Exploratory Data Analysis</h3>
+                        <p>
+                            Cleaned a heavily corrupted 18,979-row FIFA 21 player
+                            dataset, fixing 11 data-quality issues including
+                            character-encoding corruption, currency and measurement
+                            fields trapped as text, and a combined multi-line field —
+                            solved in both Python and native Excel formulas.
+                        </p>
+                        <div class="project-skills">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Excel Formulas</span>
+                            <span>Data Cleaning</span>
+                            <span>EDA</span>
+                        </div>
+                        <a href="https://github.com/bramwelsamwel16/fifa21-data-cleaning-eda"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/books.png" alt="Books Data Extraction and Web Scraping">
+                    <div class="project-content">
+                        <span class="project-category">Python / Web Scraping</span>
+                        <h3>Books Data Extraction &amp; Web Scraping</h3>
+                        <p>
+                            Built a Python web scraper to extract book titles,
+                            prices, ratings and product URLs from an online
+                            bookstore, then cleaned and structured the results
+                            into a ready-to-analyze CSV/Excel dataset.
+                        </p>
+                        <div class="project-skills">
+                            <span>Python</span>
+                            <span>BeautifulSoup</span>
+                            <span>Web Scraping</span>
+                            <span>Data Cleaning</span>
+                            <span>Excel/CSV</span>
+                        </div>
+                        <a href="https://github.com/bramwelsamwel16/books-web-scraping"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="images/ecommerce.png" alt="E-commerce Product Data Extraction and Web Scraping">
+                    <div class="project-content">
+                        <span class="project-category">Python / Web Scraping</span>
+                        <h3>E-commerce Product Data Extraction &amp; Web Scraping</h3>
+                        <p>
+                            Scraped product listings (name, price, rating,
+                            reviews, category and URL) from an e-commerce site
+                            using Python, BeautifulSoup and Selenium, then
+                            parsed and cleaned the data into structured
+                            Excel, CSV and JSON outputs.
+                        </p>
+                        <div class="project-skills">
+                            <span>Python</span>
+                            <span>Selenium</span>
+                            <span>BeautifulSoup</span>
+                            <span>HTML Parsing</span>
+                            <span>Data Cleaning</span>
+                        </div>
+                        <a href="https://github.com/bramwelsamwel16/ecommerce-web-scraping"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link">
+                            View Project →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
                     <img src="images/project1.jpg" alt="HR Attrition Analysis">
                     <div class="project-content">
-                        <span class="project-category">Python / Power BI</span>
+                        <span class="project-category">Power BI / SQL / Excel</span>
                         <h3>HR Attrition Analysis</h3>
                         <p>
-                            Analysis of employee attrition, job satisfaction,
-                            departments and workforce trends.
+                            Interactive Power BI dashboard analyzing why
+                            employees leave, using a star-schema data model
+                            built from the IBM HR Analytics dataset. Identified
+                            overtime, job role and tenure as the strongest
+                            attrition drivers.
                         </p>
+                        <div class="project-skills">
+                            <span>Power BI</span>
+                            <span>DAX</span>
+                            <span>SQL</span>
+                            <span>Excel</span>
+                        </div>
                         <a href="https://github.com/bramwelsamwel16/hr-attrition-analysis"
                            target="_blank"
                            rel="noopener noreferrer"
@@ -718,6 +827,10 @@
                             Dashboard for analyzing sales, revenue and
                             regional performance.
                         </p>
+                        <div class="project-skills">
+                            <span>Power BI</span>
+                            <span>DAX</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -732,6 +845,10 @@
                         <p>
                             Analysis of customer retention and churn behavior.
                         </p>
+                        <div class="project-skills">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -747,6 +864,10 @@
                             Analysis of marketing campaigns and conversion
                             performance.
                         </p>
+                        <div class="project-skills">
+                            <span>Excel</span>
+                            <span>Pivot Tables</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -761,6 +882,9 @@
                         <p>
                             Report showing income, expenses and profit trends.
                         </p>
+                        <div class="project-skills">
+                            <span>Excel</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -776,6 +900,9 @@
                             Dashboard for tracking stock levels and product
                             movement.
                         </p>
+                        <div class="project-skills">
+                            <span>Power BI</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -791,6 +918,9 @@
                             SQL analysis of business transactions and
                             customer records.
                         </p>
+                        <div class="project-skills">
+                            <span>SQL</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -805,6 +935,9 @@
                         <p>
                             Analysis of healthcare records and service trends.
                         </p>
+                        <div class="project-skills">
+                            <span>Python</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -820,21 +953,9 @@
                             Dashboard for analyzing employee performance and
                             turnover.
                         </p>
-                        <a href="#" class="project-link">
-                            View Project →
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <img src="images/project10.jpg" alt="E-commerce Sales Analysis">
-                    <div class="project-content">
-                        <span class="project-category">SQL</span>
-                        <h3>E-commerce Sales Analysis</h3>
-                        <p>
-                            E-commerce sales analysis using SQL and business
-                            KPIs.
-                        </p>
+                        <div class="project-skills">
+                            <span>Power BI</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -850,6 +971,9 @@
                             Analysis of student performance and education
                             trends.
                         </p>
+                        <div class="project-skills">
+                            <span>Python</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -864,6 +988,9 @@
                         <p>
                             Dashboard for monitoring planned and actual spending.
                         </p>
+                        <div class="project-skills">
+                            <span>Power BI</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -878,6 +1005,9 @@
                         <p>
                             Analysis of transport costs, routes and operations.
                         </p>
+                        <div class="project-skills">
+                            <span>Excel</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -893,6 +1023,9 @@
                             Analysis of property prices, locations and market
                             activity.
                         </p>
+                        <div class="project-skills">
+                            <span>SQL</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
@@ -908,6 +1041,9 @@
                             Analysis of audience engagement and content
                             performance.
                         </p>
+                        <div class="project-skills">
+                            <span>Python</span>
+                        </div>
                         <a href="#" class="project-link">
                             View Project →
                         </a>
